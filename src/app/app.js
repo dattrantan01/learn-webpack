@@ -13,11 +13,6 @@ export function submitForm(event) {
 }
 
 function validateEmail(email) {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!re.test(email)) {
-    alert("Please enter a valid email address.");
-    return false;
-  }
   return true;
 }
 

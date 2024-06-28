@@ -11,4 +11,13 @@ module.exports = {
     // ex: If the current module is located at /Users/username/project, then __dirname is /Users/username/project
     // /Users/username/project/dist_here.
   },
+
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
 };
