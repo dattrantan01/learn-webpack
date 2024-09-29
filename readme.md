@@ -72,3 +72,26 @@ npm install --save-dev webpack-merge
 npm install --save-dev webpack-dev-server
 ```
 - Then we can config in package.json. Using webpack-dev-server instead of webpack, and also use flag --open to automatically open in out web browser. And Also we will not have to build dist folder.
+
+# HTML Loader and File Loader
+- HTML loader Processes HTML files to resolve asset references (like images, stylesheets, scripts) and imports them into your JavaScript bundle. Useful for managing dynamic HTML templates.
+
+- When we use images or somethings that contain import like "src/assets/image.png", file loader helps bundling of static files such as images, fonts. By using the file loader, Webpack ensures that all the static assets of your web project are included in the build process, linked correctly, and optimized for performance.It moves static assets (e.g., images like logo.png) to your build folder. Renames files for cache-busting (by adding hash values) and returns the proper URL for use in your app.
+
+```
+npm install --save-dev html-loader
+```
+```
+npm install --save-dev file-loader
+```
+
+# clean-webpack-plugin
+```
+npm install --save-dev clean-webpack-plugin
+```
+- For webpack v4 and below, but for v5 we can config in webpack file 
+```
+output: {
+  clean: true
+}
+```
