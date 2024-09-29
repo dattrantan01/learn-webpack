@@ -44,3 +44,14 @@ module.exports = {
 };
 ```
 
+# Cache Busting and Plugins
+- By default, our browser will cache our file like css if the js file doesn't change. So if we keep in dist just main.js then our css will not load. So we need to bust it. By add hash code to file main like main.[hash].js or main-[hash].js
+- Webpack give a Plugins that update js file and also update script file in html.
+
+- There are a lot of Plugins. But for now we use HtmlWebpackPlugin for our needs.
+
+```
+npm install --save-dev html-webpack-plugin
+```
+
+- HtmlWebpackPlugin create a new index.html in dist with new main.[hash].js in config file.
