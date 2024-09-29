@@ -55,3 +55,20 @@ npm install --save-dev html-webpack-plugin
 ```
 
 - HtmlWebpackPlugin create a new index.html in dist with new main.[hash].js in config file.
+
+# Product and Dev server split
+- We can split build into dev and prod. Which when we develop and save the code auto restart without manual and we don't need the dist folder, and also change the main to hash code like in product.
+
+- We split config file into 3 files, common, prod, and dev. Then merge each file by use 
+
+```
+npm install --save-dev webpack-merge
+```
+- Config in package.json for production build and development build.
+- When we npm run build then the webpack.prod will run and because of production mode, the main.[hash] js and html file will be minified
+- For the development build, we don't have to build manually by install webpack-dev-server.
+
+```
+npm install --save-dev webpack-dev-server
+```
+- Then we can config in package.json. Using webpack-dev-server instead of webpack, and also use flag --open to automatically open in out web browser. And Also we will not have to build dist folder.
