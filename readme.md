@@ -95,3 +95,41 @@ output: {
   clean: true
 }
 ```
+
+# mini-css-extract-plugin
+```
+npm install --save-dev mini-css-extract-plugin
+```
+
+add to plugins:
+```
+plugins: [new MiniCssExtractPlugin({
+  filename: '[name].[contentHast].css'
+})]
+```
+
+and then go to module and change from 'style-loader' to 'MiniCssExtractPlugin.loader'. Just use in Production Mode.
+
+This plugin help us to extract css into css files
+
+# optimize-css-assets-webpack-plugin
+
+```
+const OptimizeCssAssetsPlugin = required("optimize-css-assets-webpack-plugin")
+
+optimization: {
+  minimizer: [new OptimizeCssAssetsPlugin()]
+}
+```
+use optimization property that the same level with module property
+
+# terser-webpack-plugin
+```
+const TerserPlugin = required("terser-webpack-plugin")
+
+optimization: {
+  minimizer: [new TerserPlugin()]
+}
+```
+
+This plugin help us to minify css files and js files. And don't forget to use this plugin for production 
